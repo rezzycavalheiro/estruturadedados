@@ -46,7 +46,6 @@ int empilha(Pilha* p, int elemento){
         return -1;
         }
     else{
-        //faz o topo subir, e coloca o elemento em cima
         p->topo++;
         p->dado[p->topo] = elemento;
         return 1;
@@ -55,7 +54,6 @@ int empilha(Pilha* p, int elemento){
 
 int desempilha(Pilha *p)
 {
-    //checa se a pilha está vazia
     if (vazio(p))
     {
         printf("Pilha Vazia");
@@ -64,7 +62,6 @@ int desempilha(Pilha *p)
     else
     {
         int elemento = p->dado[p->topo];
-        //retirando o elemento do topo
         p->topo--;
         return elemento;
     }
@@ -86,15 +83,11 @@ int topo(Pilha *p)
 
 int main()
 {
-    Pilha *p = cria_pilha(20);
-    
+    Pilha *p = cria_pilha(5);
     int i;
     for(i=0; i<5; i++)
     {
-        empilha(p, 10);
-        empilha(p, 16);
-        empilha(p, 5);
-        empilha(p, 7);
+        empilha(p, i+10);
     }
     printf("O elemento do topo eh: %d \n", topo(p));
 
